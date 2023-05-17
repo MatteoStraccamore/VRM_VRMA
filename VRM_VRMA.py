@@ -12,11 +12,8 @@ class VRM:
         number_rings = 1,
         number_arch = 1,
         plot = False,
-        save = False,
-        find_xp_yp_best = False
-        
+        save = False
     ):
-        #mettere print con errore sul fatto che il file deve essere: xp, yp, Vlos
         self.Vreal_los = Vreal[:,2]
         self.I = Iinput/180.*np.pi
         self.phi0 = phi0input/180.*np.pi
@@ -48,9 +45,6 @@ class VRM:
         R_rescaled, theta = self._rescaled_R_theta(self.xp,self.yp)
 
         predictions = []
-        #array = np.where(R_rescaled <=1.)
-        #a = np.sin(self.I)*np.cos(theta[array])
-        #b = np.sin(self.I)*np.sin(theta[array])
         a = np.sin(self.I)*np.cos(theta)
         b = np.sin(self.I)*np.sin(theta)
         ones = np.ones(shape=a.shape[0])
@@ -110,7 +104,6 @@ class VRM:
                 
         if self.plot:
             plt.figure(figsize=(18,5))
-            #plt.suptitle('Maps comparison: %s' %file, fontsize=20)
 
             #REAL MAP
             plt.subplot(1, 2, 1)
