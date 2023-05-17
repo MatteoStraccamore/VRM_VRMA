@@ -1,4 +1,4 @@
-# Velocity Residuals Model (VRM)
+# Velocity Ring Model (VRM)
 This code implements a VRM for analyzing velocity fields of external galaxies. The code can be used to fit a variable number of arcs (N_a = 1, 2, 4, ...) to a given galaxy and obtain two-dimensional maps of tangential and radial velocities (v_t(R, theta) and v_r(R, theta)).
 ## Installation
 This code requires the following Python libraries: numpy, matplotlib, and scipy. These can be installed via pip:
